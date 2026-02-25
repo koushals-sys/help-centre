@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import node from '@astrojs/node';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 import fs from 'node:fs';
@@ -101,6 +102,7 @@ const sidebar = [
 
 export default defineConfig({
   output: 'static',
+  adapter: node({ mode: 'standalone' }),
   integrations: [
 		react(),
 		keystatic(),
