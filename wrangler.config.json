@@ -1,7 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "astro",
-  "main": "./src/worker.ts",
+  "main": "./index.js",
+  "no_bundle": true,
   "compatibility_date": "2025-04-15",
   "compatibility_flags": [
     "nodejs_compat"
