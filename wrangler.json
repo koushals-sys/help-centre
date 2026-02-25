@@ -28,7 +28,7 @@
       "binding": "DB",
       "database_name": "my-database",
       "database_id": "1234567890",
-      "migrations_dir": "./migrations"
+      "migrations_dir": "."
     }
   ]
 }
