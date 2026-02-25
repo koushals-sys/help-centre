@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:webflow",
   "outputDirectory": "dist",
   "cloud": {
     "framework": "static"

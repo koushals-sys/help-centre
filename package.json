@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:webflow": "if [ -f clouduser.astro.config.mjs ]; then astro build --config clouduser.astro.config.mjs; else astro build; fi",
     "preview": "astro preview",
     "astro": "astro",
     "export:webflow": "node export_webflow_csv.cjs",
