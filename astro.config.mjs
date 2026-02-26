@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -99,7 +100,8 @@ const sidebar = [
 // https://astro.build/config
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
+  adapter: cloudflare(),
   integrations: [
 		react(),
 		starlight({

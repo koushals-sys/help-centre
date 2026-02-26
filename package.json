@@ -7,7 +7,7 @@
     "start": "astro dev",
     "prebuild": "npm run sync:webflow:docs",
     "build": "astro build",
-    "postbuild": "rm -rf webflow_output && mkdir -p webflow_output/assets && cp -R dist/. webflow_output/assets/ && cp -f index.js webflow_output/index.js && cp -f index.js dist/index.js && if [ -d /output ]; then mkdir -p /output/assets && cp -R dist/. /output/assets/ && cp -f index.js /output/index.js; fi",
+    "postbuild": "rm -rf webflow_output && mkdir -p webflow_output/assets && cp -R dist/. webflow_output/assets/ && if [ -d dist/_worker.js ]; then cp -R dist/_worker.js/. webflow_output/; fi && if [ -f webflow_output/index.js ]; then cp -f webflow_output/index.js dist/index.js; fi && if [ -d /output ]; then mkdir -p /output/assets && cp -R dist/. /output/assets/ && cp -f webflow_output/index.js /output/index.js 2>/dev/null || true; fi",
     "sync:webflow:docs": "node sync_webflow_docs.cjs",
     "build:webflow": "npm run sync:webflow:docs && if [ -f clouduser.astro.config.mjs ]; then astro build --config clouduser.astro.config.mjs; else astro build; fi",
     "preview": "astro preview",
@@ -18,6 +18,7 @@
     "webflow:update-paths": "node webflow_update_paths.cjs"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/react": "^4.4.2",
     "@astrojs/starlight": "^0.37.6",
     "@keystatic/astro": "^5.0.6",
