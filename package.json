@@ -7,7 +7,6 @@
     "start": "astro dev",
     "prebuild": "npm run sync:webflow:docs",
     "build": "astro build",
-    "postbuild": "cp -f index.js dist/index.js && if [ -d /output ]; then cp -f index.js /output/index.js; fi",
     "sync:webflow:docs": "node sync_webflow_docs.cjs",
     "build:webflow": "npm run sync:webflow:docs && if [ -f clouduser.astro.config.mjs ]; then astro build --config clouduser.astro.config.mjs; else astro build; fi",
     "preview": "astro preview",
@@ -19,7 +18,6 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/node": "^9.5.4",
     "@astrojs/react": "^4.4.2",
     "@astrojs/starlight": "^0.37.6",
     "@keystatic/astro": "^5.0.6",
