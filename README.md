@@ -44,6 +44,24 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Webflow static deploy flow
+
+Use these environment variables in Webflow Cloud project settings:
+
+- `WEBFLOW_API_TOKEN`
+- `WEBFLOW_ARTICLES_COLLECTION_ID`
+
+Build command for Webflow remains:
+
+```
+npm run build:webflow
+```
+
+That command now runs:
+
+1. `npm run sync:webflow:docs` to fetch published docs from Webflow CMS and write markdown files under `src/content/docs`.
+2. `astro build` (or `clouduser.astro.config.mjs` when provided by Webflow).
+
 ## 👀 Want to learn more?
 
 Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
