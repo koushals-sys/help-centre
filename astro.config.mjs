@@ -1,9 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import cloudflare from '@astrojs/cloudflare';
 import react from '@astrojs/react';
-import keystatic from '@keystatic/astro';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -101,11 +99,9 @@ const sidebar = [
 // https://astro.build/config
 
 export default defineConfig({
-  output: 'server',
-  adapter: cloudflare(),
+  output: 'static',
   integrations: [
 		react(),
-		keystatic(),
 		starlight({
 			title: 'SpryHealth Help Centre',
 			logo: {

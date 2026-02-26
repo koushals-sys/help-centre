@@ -1,10 +1,7 @@
 {
   "buildCommand": "npm run build:webflow",
-  "outputDirectory": "webflow_output",
+  "outputDirectory": "dist",
   "cloud": {
     "framework": "vite"
-  },
-  "cloudflare": {
-    "entry": "index.js"
   }
 }
